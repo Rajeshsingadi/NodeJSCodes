@@ -30,5 +30,19 @@ console.log("Checking via function in file system")
 fs.readdir('./', function (err, files) {
     if (err) console.log('Error', err)
     else console.log('Result', files)
-
 })
+
+
+
+console.log("Event Module")
+const EventEmitter = require('events')
+const emitter = new EventEmitter()
+
+//Register a listener
+emitter.on('MessageLogged', function () {
+    console.log("listener called now!")
+})
+
+//Raise an event
+emitter.emit('MessageLogged')
+// console.log(emitter)
