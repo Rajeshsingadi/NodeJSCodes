@@ -46,3 +46,12 @@ emitter.on('MessageLogged', function () {
 //Raise an event
 emitter.emit('MessageLogged')
 // console.log(emitter)
+
+//Adding arguments to the events
+//Register a listener
+emitter.on('MessageLogged', function (arg) {
+    console.log("listener called now!", arg)
+})
+
+//Raise an event
+emitter.emit('MessageLogged', { id: 1, url: "http://hello.com" })
