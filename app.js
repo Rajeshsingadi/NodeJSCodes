@@ -1,3 +1,3 @@
 var logger = require('./logger');
-logger("message Displayed using the functions")
+logger.log("message Displayed using the variables")
 
