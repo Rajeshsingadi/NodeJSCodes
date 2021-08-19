@@ -55,3 +55,27 @@ emitter.on('MessageLogged', function (arg) {
 
 //Raise an event
 emitter.emit('MessageLogged', { id: 1, url: "http://hello.com" })
+
+
+//demonstration of the Http module
+
+// const http = require('http')
+
+// const server = http.createServer()
+// server.on('connnection', (socket) => {
+//     console.log("New connection on the port 3000...")
+// })
+// server.listen(3000)
+// console.log("Listening on the port 3000")
+
+const http = require('http')
+
+const server = http.createServer((req, res) => {
+    if (req.url === '/') {
+        res.write('Hello World')
+        res.end()
+    }
+
+})
+server.listen(3000)
+console.log("Listening on the port 3000")
